@@ -21,7 +21,7 @@ function Chat({location}) {
     const [users, setUsers] = useState('');
     useEffect(()=>{
         const {name,room}=queryString.parse(location.search)
-        socket=io('localhost:5000',connectionOptions)
+        socket=io('https://whats-app-clone-client123.herokuapp.com/',connectionOptions)
         setRoom(room)
         setName(name)
         socket.emit('join',{name,room},(err)=>{if(err)alert(err)})
